@@ -1,13 +1,68 @@
-API utilizada nesse projeto: https://serverest.dev/ 
+# API utilizada
+https://serverest.dev/ 
+
+# Arquitetura do projeto
+```
+cypress/
+  e2e/
+    usuarios/
+      postUsuario.cy.js
+      getUsuario.cy.js
+      putUsuario.cy.js
+      deleteUsuario.cy.js
+    produtos/
+      postProduto.cy.js
+      getProduto.cy.js
+      putProduto.cy.js
+      deleteProduto.cy.js
+  fixtures/
+    usuario.json
+    produto.json
+  support/
+    e2e.js
+    commands.js
+```
+**Boas práticas aplicadas aqui:**
+
+- Separar por **módulo** (`usuarios`, `produtos`).
+- Centralizar **massa de dados fixa** em `fixtures`.
+- Colocar **reuso de requests** em `commands.js`.
+
 
 # PASSOS
-## 1️⃣Criando o projeto e instalando o Cypress
+## 1️⃣ Criando o projeto e instalando o Cypress
 
 No terminal:
 
-2. Iniciar package.json
-npm init -y
+1. Iniciar package.json
+    ```
+    npm init -y
+    ```
 
-3. Instalar Cypress como dependência de desenvolvimento
-npm install cypress --save-dev
-Isso cria um package.json e adiciona o Cypress.
+2. Instalar Cypress como dependência de desenvolvimento
+    ```
+    npm install cypress --save-dev
+    ```
+    Isso cria um `package.json` e adiciona o Cypress.
+
+## 2️⃣ Abrindo o Cypress pela primeira vez
+```
+npx cypress open
+```
+
+- Ele vai criar automaticamente a pasta cypress/ e o arquivo cypress.config.js.
+
+- Esse arquivo é onde centralizamos as configurações globais.
+
+## 3️⃣ Ajustando configurações iniciais (cypress.config.js)
+```
+const { defineConfig } = require('cypress')
+
+module.exports = defineConfig({
+  e2e: {
+    baseUrl: 'https://serverest.dev',
+    specPattern: 'cypress/e2e/**/*.cy.js',
+    supportFile: 'cypress/support/e2e.js'
+  }
+})
+```
