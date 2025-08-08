@@ -1,0 +1,24 @@
+{
+  "name": "projetobmsl-automacaoapi-intermediario",
+  "version": "1.0.0",
+  "description": "https://serverest.dev/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoMatheus96/ProjetoBMSL-AutomacaoAPI_ServeRest-Intermediario.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunoMatheus96/ProjetoBMSL-AutomacaoAPI_ServeRest-Intermediario/issues"
+  },
+  "homepage": "https://github.com/BrunoMatheus96/ProjetoBMSL-AutomacaoAPI_ServeRest-Intermediario#readme",
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "cypress": "^14.5.4"
+  }
+}

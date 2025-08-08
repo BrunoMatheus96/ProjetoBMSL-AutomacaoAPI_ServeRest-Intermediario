@@ -28,7 +28,6 @@ cypress/
 - Centralizar **massa de dados fixa** em `fixtures`.
 - Colocar **reuso de requests** em `commands.js`.
 
-
 # PASSOS
 ## 1️⃣ Criando o projeto e instalando o Cypress
 
@@ -41,9 +40,12 @@ No terminal:
 
 2. Instalar Cypress como dependência de desenvolvimento
     ```
-    npm install cypress --save-dev
+    npm install cypress -D
     ```
-    Isso cria um `package.json` e adiciona o Cypress.
+3. Instalar validação de schema (opcional, mas recomendado)
+    ```
+    npm install ajv --save-dev
+    ```
 
 ## 2️⃣ Abrindo o Cypress pela primeira vez
 ```
@@ -54,15 +56,7 @@ npx cypress open
 
 - Esse arquivo é onde centralizamos as configurações globais.
 
-## 3️⃣ Ajustando configurações iniciais (cypress.config.js)
+## 3️⃣ Rodar testes no modo headless
 ```
-const { defineConfig } = require('cypress')
-
-module.exports = defineConfig({
-  e2e: {
-    baseUrl: 'https://serverest.dev',
-    specPattern: 'cypress/e2e/**/*.cy.js',
-    supportFile: 'cypress/support/e2e.js'
-  }
-})
+npx cypress run
 ```
