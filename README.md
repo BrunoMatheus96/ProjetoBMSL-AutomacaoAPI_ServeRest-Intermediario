@@ -42,10 +42,6 @@ No terminal:
     ```
     npm install cypress -D
     ```
-3. Instalar validação de schema (opcional, mas recomendado)
-    ```
-    npm install ajv --save-dev
-    ```
 
 ## 2️⃣ Abrindo o Cypress pela primeira vez
 ```
