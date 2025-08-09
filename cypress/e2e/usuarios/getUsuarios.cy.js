@@ -3,7 +3,7 @@ describe('GET /usuarios', () => {
     it('Listar usuarios cadastrados', function () {
         cy.fixture('usuario').then((data) => {
 
-            const email = data.cadastro_ja_existente.email
+            const email = data.cadastro_ja_existente.dados.email
 
             cy.getUsuarios(email).then((response) => {
                 expect(response.status).to.eq(200)
@@ -28,5 +28,34 @@ describe('GET /usuarios', () => {
         })
     })
 
+    it('Listar usuarios cadastrados por id', function () {
+        cy.fixture('usuario').then((data) => {
+
+            const id = data.cadastro_ja_existente._id._id
+
+            cy.getUsuarios_por_id(id).then((response) => {
+                expect(response.status).to.eq(200)
+                expect(response.body).to.have.property('nome', 'Fulano da Silva')
+                expect(response.body).to.have.property('email', data.cadastro_ja_existente.dados.email)
+                expect(response.body).to.have.property('_id', id)
+                expect(response.body).to.have.property('administrador', "true")
+
+            })
+        })
+    })
+
+
+    it('Cadastro nao encontrado por id', function () {
+        cy.fixture('usuario').then((data) => {
+
+            const id = data.sem_cadastro._id
+
+            cy.getUsuarios_por_id(id).then((response) => {
+                expect(response.status).to.eq(400)
+                expect(response.body).to.have.property('message', 'Usuário não encontrado')
+            })
+        })
+    })
+    
 
 })

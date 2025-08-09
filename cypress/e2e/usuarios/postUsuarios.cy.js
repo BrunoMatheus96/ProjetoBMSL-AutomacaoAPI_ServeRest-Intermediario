@@ -3,7 +3,7 @@ describe('POST /usuarios', () => {
   it('Usuário ja cadastrado', function () {
     cy.fixture('usuario').then((data) => {
 
-      const usuario = data.cadastro_ja_existente
+      const usuario = data.cadastro_ja_existente.dados
 
       cy.postUsuarios(usuario).then((response) => {
         expect(response.status).to.eq(400)
