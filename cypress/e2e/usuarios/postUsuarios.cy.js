@@ -1,8 +1,9 @@
 describe('POST /usuarios', () => {
-    
+
   it('Usuário já cadastrado', function () {
     cy.fixture('usuario').then((data) => {
-      const usuario = data.cadastro_ja_exist
+
+      const usuario = data.cadastro_ja_existente
 
       cy.postUsuarios(usuario).then((response) => {
         expect(response.status).to.eq(400)
@@ -10,4 +11,21 @@ describe('POST /usuarios', () => {
       })
     })
   })
+
+  it('Cadastrar usuário', function () {
+    cy.fixture('usuario').then((data) => {
+
+      const usuario = data.cadastro
+
+      cy.task('removeUser', usuario.email) // Remove o usuário antes de criar e o código esta localizado no cypress.config.js
+
+      cy.postUsuarios(usuario).then((response) => {
+        expect(response.status).to.eq(201)
+        expect(response.body).to.have.property('message', 'Cadastro realizado com sucesso')
+        expect(response.body).to.have.property('_id').and.to.be.a('string')
+      })
+    })
+  })
+
 })
+

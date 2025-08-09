@@ -1,8 +1,15 @@
 {
-    "cadastro_ja_exist": {
+    "cadastro_ja_existente": {
         "nome": "Fulano da Silva",
         "email": "beltrano@qa.com.br",
         "password": "teste",
+        "administrador": "true"
+    },
+
+    "cadastro": {
+        "nome": "Naruto",
+        "email": "naruto@qa.com.br",
+        "password": "teste123",
         "administrador": "true"
     }
 }
