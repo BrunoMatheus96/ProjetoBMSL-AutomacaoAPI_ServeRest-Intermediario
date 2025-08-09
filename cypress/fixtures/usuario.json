@@ -5,11 +5,13 @@
         "password": "teste",
         "administrador": "true"
     },
-
     "cadastro": {
         "nome": "Naruto",
         "email": "naruto@qa.com.br",
         "password": "teste123",
         "administrador": "true"
+    },
+    "sem_cadastro": {
+        "email": "fulano@qa.com.br"
     }
 }
