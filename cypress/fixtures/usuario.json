@@ -1,15 +1,23 @@
 {
     "cadastro_ja_existente": {
-        "nome": "Fulano da Silva",
-        "email": "beltrano@qa.com.br",
-        "password": "teste",
-        "administrador": "true"
+        "dados": {
+            "nome": "Fulano da Silva",
+            "email": "beltrano@qa.com.br",
+            "password": "teste",
+            "administrador": "true"
+        },
+        "_id": {
+            "_id": "iYtsp4n4nDBxPqr9"
+        }
     },
-
     "cadastro": {
         "nome": "Naruto",
         "email": "naruto@qa.com.br",
         "password": "teste123",
         "administrador": "true"
+    },
+    "sem_cadastro": {
+        "email": "fulano@qa.com.br",
+        "_id": "iYtsp4n4nDBxPqr1"
     }
 }
