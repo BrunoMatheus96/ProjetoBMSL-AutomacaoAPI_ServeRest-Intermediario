@@ -10,14 +10,8 @@ cypress/
       getUsuario.cy.js
       putUsuario.cy.js
       deleteUsuario.cy.js
-    produtos/
-      postProduto.cy.js
-      getProduto.cy.js
-      putProduto.cy.js
-      deleteProduto.cy.js
   fixtures/
     usuario.json
-    produto.json
   support/
     e2e.js
     commands.js
