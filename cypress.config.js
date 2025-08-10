@@ -22,7 +22,7 @@ module.exports = defineConfig({
           }
         },
 
-        async criarUsuario(usuario = data.cadastro2) {
+        async criarUsuario(usuario) {
           // 1. Verificar se o usuário já existe pelo email
           const { data } = await axios.get(`https://serverest.dev/usuarios?email=${usuario.email}`);
 
@@ -35,7 +35,13 @@ module.exports = defineConfig({
           // 3. Criar o novo usuário
           const res = await axios.post('https://serverest.dev/usuarios', usuario);
           return { id: res.data._id, ...res.data };
-        }
+        },
+
+        async buscarUsuariosPorEmail(email) {
+          const response = await axios.get(`https://serverest.dev/usuarios?email=${email}`);
+          return response.data;  // retorna os dados para o teste
+        },
+
       });
 
       return config;

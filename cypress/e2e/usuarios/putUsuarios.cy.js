@@ -20,15 +20,15 @@ describe('PUT /usuarios', () => {
     it('Editar usuario com email já existente', function () {
         cy.fixture('usuario').then((data) => {
 
-            const usuario = data.cadastro_ja_existente.dados;
-            const userId = data.cadastro_ja_existente._id._id
+            const usuario = data.cadastro_ja_existente;
+            const id = '0uxuPY0cbmQhpEz1';
 
-            cy.putUsuarios(userId, usuario).then((response) => {
-                expect(response.status).to.eq(400)
-                expect(response.body).to.have.property('message', 'Este email já está sendo usado')
+                cy.putUsuarios(id, usuario).then((response) => {
+                    expect(response.status).to.eq(400)
+                    expect(response.body).to.have.property('message', 'Este email já está sendo usado')
+                })
             })
         })
-    })
 
 })
 
