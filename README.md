@@ -13,10 +13,13 @@ cypress/
       putUsuario.cy.js
       deleteUsuario.cy.js
   fixtures/
+    schema/
+      usuarios.schema.json
     usuario.json
   support/
     e2e.js
     commands.js
+    tasks.js
 ```
 **Boas práticas aplicadas aqui:**
 
