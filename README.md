@@ -39,7 +39,7 @@ No terminal:
     npm init -y
     ```
 
-2. Instalar Cypress como dependência de desenvolvimento
+2. Instalar Cypress
     ```
     npm install cypress -D
     ```
