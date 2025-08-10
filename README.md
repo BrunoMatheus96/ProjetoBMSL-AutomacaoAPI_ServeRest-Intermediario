@@ -1,7 +1,9 @@
 # API utilizada
 https://serverest.dev/ 
+<br><br>
 
 # Arquitetura do projeto
+
 ```
 cypress/
   e2e/
@@ -22,7 +24,9 @@ cypress/
 - Centralizar **massa de dados fixa** em `fixtures`.
 - Colocar **reuso de requests** em `commands.js`.
 
+<br><br>
 # PASSOS
+
 ## 1️⃣ Criando o projeto e instalando o Cypress
 
 No terminal:
@@ -46,7 +50,9 @@ npx cypress open
 
 - Esse arquivo é onde centralizamos as configurações globais.
 
-## 3️⃣ Rodar testes no modo headless
+<br><br>
+# Para rodar os testes sem abrir o Cypress
+## Rodar testes no modo headless
 ```
 npx cypress run
 ```
