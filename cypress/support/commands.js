@@ -1,3 +1,19 @@
+import Ajv from "ajv";
+
+const ajv = new Ajv({ allErrors: true, strict: false });
+
+Cypress.Commands.add("validarSchema", (schema, resposta) => {
+  const validate = ajv.compile(schema);
+  const valid = validate(resposta);
+
+  if (!valid) {
+    throw new Error(
+      "Falha na validação do schema: " +
+      JSON.stringify(validate.errors, null, 2)
+    );
+  }
+});
+
 Cypress.Commands.add('postUsuarios', (dados) => {
   return cy.api({
     method: 'POST',

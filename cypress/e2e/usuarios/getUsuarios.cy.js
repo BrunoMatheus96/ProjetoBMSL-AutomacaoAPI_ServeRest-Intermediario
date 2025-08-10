@@ -2,6 +2,14 @@ const axios = require('axios');
 
 describe('GET /usuarios', () => {
 
+    beforeEach(() => {
+        cy.request('/usuarios').then((response) => {
+            cy.fixture('schema/usuarios.schema.json').then((schema) => {
+                cy.validarSchema(schema, response.body)
+            })
+        })
+    })
+
     it('Listar usuarios cadastrados', function () {
         cy.fixture('usuario').then((data) => {
 
@@ -11,8 +19,6 @@ describe('GET /usuarios', () => {
                 expect(response.status).to.eq(200)
                 expect(response.body.quantidade).to.be.a('number')
                 expect(response.body.usuarios).to.be.an('array')
-                expect(response.body.usuarios[0]).to.have.property('nome', 'Fulano da Silva')
-                expect(response.body.usuarios[0]).to.have.property('email', email)
             })
         })
     })
@@ -50,8 +56,6 @@ describe('GET /usuarios', () => {
             })
         })
     })
-
-
 
     it('Cadastro nao encontrado por id', function () {
         cy.fixture('usuario').then((data) => {

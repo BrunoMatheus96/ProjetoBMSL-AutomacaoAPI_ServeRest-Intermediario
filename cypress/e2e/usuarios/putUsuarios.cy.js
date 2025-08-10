@@ -1,5 +1,14 @@
 describe('PUT /usuarios', () => {
 
+    beforeEach(() => {
+        cy.request('/usuarios').then((response) => {
+            cy.fixture('schema/usuarios.schema.json').then((schema) => {
+                cy.validarSchema(schema, response.body)
+            })
+        })
+    })
+
+
     it('Editar usuario', function () {
         cy.fixture('usuario').then((data) => {
 
@@ -23,12 +32,12 @@ describe('PUT /usuarios', () => {
             const usuario = data.cadastro_ja_existente;
             const id = '0uxuPY0cbmQhpEz1';
 
-                cy.putUsuarios(id, usuario).then((response) => {
-                    expect(response.status).to.eq(400)
-                    expect(response.body).to.have.property('message', 'Este email já está sendo usado')
-                })
+            cy.putUsuarios(id, usuario).then((response) => {
+                expect(response.status).to.eq(400)
+                expect(response.body).to.have.property('message', 'Este email já está sendo usado')
             })
         })
+    })
 
 })
 
