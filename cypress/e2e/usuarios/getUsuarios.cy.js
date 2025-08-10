@@ -2,7 +2,7 @@ const axios = require('axios');
 
 describe('GET /usuarios', () => {
 
-    it('Listar usuarios cadastrados', function () {
+    it.only('Listar usuarios cadastrados', function () {
         cy.fixture('usuario').then((data) => {
 
             const email = data.cadastro_ja_existente.email
