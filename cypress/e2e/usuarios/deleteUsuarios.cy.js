@@ -1,5 +1,14 @@
 describe('DELETE /usuarios', () => {
 
+    beforeEach(() => {
+        cy.request('/usuarios').then((response) => {
+            cy.fixture('schema/usuarios.schema.json').then((schema) => {
+                cy.validarSchema(schema, response.body)
+            })
+        })
+    })
+
+
     it('Deletar usuario', function () {
         cy.fixture('usuario').then((data) => {
 
