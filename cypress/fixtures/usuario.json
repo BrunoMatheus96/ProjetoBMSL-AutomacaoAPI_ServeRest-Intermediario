@@ -5,11 +5,20 @@
         "password": "teste",
         "administrador": "true"
     },
-
     "cadastro": {
         "nome": "Naruto",
         "email": "naruto@qa.com.br",
         "password": "teste123",
         "administrador": "true"
+    },
+    "cadastro2": {
+        "nome": "Naruto",
+        "email": "naruto5@qa.com.br",
+        "password": "teste123",
+        "administrador": "true"
+    },
+    "sem_cadastro": {
+        "email": "fulano@qa.com.br",
+        "_id": "iYtsp4n4nDBxPqr1"
     }
 }
