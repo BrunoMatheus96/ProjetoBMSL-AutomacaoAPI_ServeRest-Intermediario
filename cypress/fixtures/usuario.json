@@ -7,12 +7,18 @@
             "administrador": "true"
         },
         "_id": {
-            "_id": "iYtsp4n4nDBxPqr9"
+            "_id": "5rGnt5Ojjg15Xi0B"
         }
     },
     "cadastro": {
         "nome": "Naruto",
         "email": "naruto@qa.com.br",
+        "password": "teste123",
+        "administrador": "true"
+    },
+     "cadastro2": {
+        "nome": "Naruto",
+        "email": "naruto5@qa.com.br",
         "password": "teste123",
         "administrador": "true"
     },

@@ -17,7 +17,7 @@ describe('POST /usuarios', () => {
 
       const usuario = data.cadastro
 
-      cy.task('removeUser', usuario.email) // Remove o usuário antes de criar e o código esta localizado no cypress.config.js
+      cy.task('removerUsuario', usuario.email) // Remove o usuário antes de criar e o código esta localizado no cypress.config.js
 
       cy.postUsuarios(usuario).then((response) => {
         expect(response.status).to.eq(201)
